@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Profile from "./component/Profile/Profile.jsx";
+import Photo from "./nidhal.jpg";
 
 function App() {
+  const handleName = (fullName) => alert(fullName);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <div
+        className="App"
+        style={{ height: 600, fontFamily: "sans-serif", margin: 25 }}
+      >
+        <Profile
+          fullName="DHIBI Nidhal"
+          bio="Web developer.part of a Team Hackerspace Gafsa "
+          profession=" JavaScript Full Stack Developer"
+          handleName={handleName}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <img src={Photo} alt="nidhal.jpg"></img>
+        </Profile>
+      </div>
+    </>
   );
 }
 
